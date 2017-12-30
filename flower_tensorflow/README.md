@@ -3,16 +3,16 @@
 
 ## 使用方式
 ```
-	# 預先處理
-    python preprocessing.py
-	# 啟動伺服器
-    python seq2seq.py server
-    # 訓練
-    python seq2seq.py train
-    # 重新訓練
-    python seq2seq.py retrain
-    # 預測
-    python seq2seq.py infer
+# 預先處理
+python preprocessing.py
+# 啟動伺服器
+python seq2seq.py server
+# 訓練
+python seq2seq.py train
+# 重新訓練
+python seq2seq.py retrain
+# 預測
+python seq2seq.py infer
 ```
 	
 ## 使用 chiachun1127 作者 dynamic-seq2seq structure 進行改寫

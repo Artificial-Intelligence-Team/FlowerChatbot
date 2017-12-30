@@ -40,7 +40,7 @@
 			$.ajax
 			(
 				{
-					 url: "http://localhost:9004/getUserData",
+					 url: "http://140.116.245.150:9004/getUserData",
 					 data: {question:textContent},
 					 type:'GET',
 					 error: function(xhr)

@@ -1,0 +1,6 @@
+model_checkpoint_path: "chatbot_seq2seq.ckpt-1645091"
+all_model_checkpoint_paths: "chatbot_seq2seq.ckpt-1641091"
+all_model_checkpoint_paths: "chatbot_seq2seq.ckpt-1642091"
+all_model_checkpoint_paths: "chatbot_seq2seq.ckpt-1643091"
+all_model_checkpoint_paths: "chatbot_seq2seq.ckpt-1644091"
+all_model_checkpoint_paths: "chatbot_seq2seq.ckpt-1645091"

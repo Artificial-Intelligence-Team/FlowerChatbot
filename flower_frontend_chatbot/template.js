@@ -104,7 +104,7 @@
             }
         });
 		
-		firstMessage("你好 ~ 我叫小花很高興為你服務 ^0^");
+		firstMessage("你好 ~ 我叫小花兒很高興為你服務 ^0^");
         /*setTimeout(function () {
             return sendMessage('Hi Sandy! How are you?');
         }, 1000);

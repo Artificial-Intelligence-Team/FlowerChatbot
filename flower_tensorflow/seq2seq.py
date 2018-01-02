@@ -250,7 +250,7 @@ if __name__ == '__main__':
 			pp = preprocessing.Preprocessing()
 			print("server run.. ")
 			soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Create a socket object
-			host = "localhost" # Get local machine name
+			host = "140.116.245.146" # Get local machine name
 			port = 1994 # Reserve a port for your service.
 			soc.bind((host, port))   # Bind to the port
 			soc.listen(5) # Now wait for client connection.
@@ -258,15 +258,15 @@ if __name__ == '__main__':
 				conn, addr = soc.accept() # Establish connection with client.
 				print ("Got connection from",addr)
 				question = conn.recv(1024)
-				relation = pp.term_relationship(str(question.decode("utf-8")), 5)
+				relation = pp.term_relationship(question.decode("utf-8"), 5)
 				answer = seq.predict(relation if relation != "" else str(question))
 				print(answer)
-				conn.send(bytes((answer + "\n").encode('utf-8')))
+				conn.send((answer + "\n").encode('utf-8'))
 		elif sys.argv[1] == 'retrain':
 			seq.clearModel(0)
 			seq.train()
 		elif sys.argv[1] == 'train':
 			seq.train()
 		elif sys.argv[1] == 'infer':
-			print(seq.predict("失戀 失去的愛 純情 純潔清淡或不敢表露的愛 悲歌"))  
+			print(seq.predict("朋友"))  
 			

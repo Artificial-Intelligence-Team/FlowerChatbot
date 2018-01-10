@@ -6,7 +6,7 @@
 ## 目前訓練資料
 * 169 朵花經過人工整理成(訓練資料格式) flower.txt
 * flower_train_data 經過重複複製來增進訓練資料可靠信
-* 使用 CBOW Alogorithm 方式訓練(因格式關西('對象'會未出現)，故如使用 skip gram 效果較差)
+* 使用 CBOW Alogorithm 方式訓練(如使用 skip gram 效果較差，因格式關西('對象'會未出現))
 
 ## 使用方式
 ```

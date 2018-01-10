@@ -258,7 +258,7 @@ if __name__ == '__main__':
 				conn, addr = soc.accept() # Establish connection with client.
 				print ("Got connection from",addr)
 				question = conn.recv(1024)
-				relation = pp.term_relationship(question.decode("utf-8"), 5)
+				relation = pp.term_relationship(question.decode("utf-8"), 10)
 				answer = seq.predict(relation if relation != "" else str(question))
 				print(answer)
 				conn.send((answer + "\n").encode('utf-8'))

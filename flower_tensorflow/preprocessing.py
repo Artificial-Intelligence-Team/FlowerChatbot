@@ -39,7 +39,7 @@ class Preprocessing():
 					if a.strip() == "":
 						break;
 					try:
-						res = word_vectors.most_similar(a.strip(), topn = 5)
+						res = word_vectors.most_similar(a.strip(), topn = 10)
 					except Exception as e:
 						print(e)
 					for item in res:

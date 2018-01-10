@@ -16,7 +16,7 @@ class Train(object):
 		# Load file
 		sentence = word2vec.Text8Corpus(train_text_name + ".txt")
 		# Setting degree and Produce Model(Train)
-		model = word2vec.Word2Vec(sentence, size = 100, window = 6, min_count = 5, workers = 4, sg = 1)
+		model = word2vec.Word2Vec(sentence, size = 150, window = 6, min_count = 4, workers = 5, sg = 0)
 		# Save model 
 		model.wv.save_word2vec_format((model_name + ".model.bin"), binary = True)
 		print("model 已儲存完畢")

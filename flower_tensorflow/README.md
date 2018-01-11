@@ -16,4 +16,4 @@ python seq2seq.py infer
 ```
 	
 ## 使用 chiachun1127 作者 dynamic-seq2seq structure 進行改寫
-https://github.com/chiachun1127/dynamic-seq2seq
+https://github.com/chiachun1127/dynamic-seq2seq/blob/master/dynamic_seq2seq_model.py

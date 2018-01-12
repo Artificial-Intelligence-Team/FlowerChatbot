@@ -14,18 +14,16 @@ import io
 class Seq2seq():
 	'''
 	tensorflow-1.0.0
-
 		args:
 		encoder_vec_file	encoder向量文件  
 		decoder_vec_file	decoder向量文件
-		encoder_vocabulary  encoder词典
-		decoder_vocabulary  decoder词典
-		model_path		  模型目录
-		batch_size		  批处理数
-		sample_num		  总样本数
-		max_batches		 最大迭代次数
-		show_epoch		  保存模型步长
-
+		encoder_vocabulary  encoder辭典
+		decoder_vocabulary  decoder辭典
+		model_path		  模型目錄
+		batch_size		  批次處理數
+		sample_num		  樣本總數
+		max_batches		  最大迭代次数
+		show_epoch		  保存模型步數
 	'''
 	def __init__(self):
 		print("tensorflow version: ", tf.__version__)
@@ -71,13 +69,11 @@ class Seq2seq():
 		return _ids		
 
 	def get_fd(self, train_inputs,train_targets, batches, sample_num):
-		'''获取batch
-
-			为向量填充PAD	
-			最大长度为每个batch中句子的最大长度  
-			并将数据作转换:  
-			[batch_size, time_steps] -> [time_steps, batch_size]
-
+		'''
+		獲取 batch
+		為向量填充PAD	
+		最大長度為每個 batch 中句子的最大長度，並將數據做轉換:  
+		[batch_size, time_steps] -> [time_steps, batch_size]
 		'''
 		batch_inputs = []
 		batch_targets = []
@@ -87,7 +83,7 @@ class Seq2seq():
 		pad_inputs = []
 		pad_targets = []
 
-		# 随机样本
+		# 隨機樣本
 		shuffle = np.random.randint(0, sample_num, batches)
 		en_max_seq_length = max([len(train_inputs[i]) for i in shuffle])
 		de_max_seq_length = max([len(train_targets[i]) for i in shuffle])
@@ -115,7 +111,7 @@ class Seq2seq():
 				self.model.decoder_targets_length:batch_targets_length,}
 
 	def train(self):
-		# 获取输入输出
+		# 獲取輸入輸出
 		train_inputs = self.data_set(self.encoder_vec_file)
 		train_targets = self.data_set(self.decoder_vec_file) 
 		
@@ -131,7 +127,7 @@ class Seq2seq():
 
 		with tf.Session(config=config) as sess:
 			
-			# 初始化变量
+			# 初始化變量
 			ckpt = tf.train.get_checkpoint_state(self.model_path)
 			if ckpt is not None:
 				print(ckpt.model_checkpoint_path)
@@ -142,7 +138,7 @@ class Seq2seq():
 			loss_track = []
 			total_time = 0
 			for batch in range(self.max_batches+1):
-				# 获取fd [time_steps, batch_size]
+				# 獲取 fd [time_steps, batch_size]
 				start = time.time()
 				fd = self.get_fd(train_inputs,
 								 train_targets,
@@ -250,7 +246,7 @@ if __name__ == '__main__':
 			pp = preprocessing.Preprocessing()
 			print("server run.. ")
 			soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Create a socket object
-			host = "140.116.245.146" # Get local machine name
+			host = "127.0.0.1" # Get local machine name
 			port = 1994 # Reserve a port for your service.
 			soc.bind((host, port))   # Bind to the port
 			soc.listen(5) # Now wait for client connection.

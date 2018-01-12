@@ -38,8 +38,8 @@ def main(argv):
 				if len(query_list) == 1:
 					print("此詞彙詞向量為:")
 					print(word_vectors[query_list[0]])
-					print("詞彙相似詞前 20 排序")
-					res = word_vectors.most_similar(query_list[0], topn = 20)
+					print("詞彙相似詞前 10 排序")
+					res = word_vectors.most_similar(query_list[0], topn = 10)
 					for item in res:
 						print(item[0] + "," + str(item[1]))
 				elif len(query_list) == 2:

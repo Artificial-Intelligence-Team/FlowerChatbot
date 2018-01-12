@@ -200,7 +200,7 @@ class Seq2seq():
 				print(ckpt.model_checkpoint_path)
 				self.model.saver.restore(sess, ckpt.model_checkpoint_path)
 			else:
-				print("没找到模型")
+				print("沒找到模型")
 			#inputs_strs = re.sub("[\s+\.\!\/_,$%^*(+\"\']+|[+——！，。“”’‘？?、~@#￥%……&*（）]+", "", inputs_strs)
 			segements = []
 			segements.extend(question.split(" "))

@@ -12,7 +12,6 @@
 =======
 * flower_train_data 經過重複複製來增進訓練資料可靠信
 * 使用 CBOW Alogorithm 方式訓練(如使用 skip gram 效果較差，因格式關係('對象'會未出現))
->>>>>>> bf9ea58cf8d8dc52575bb3347dc04df4d08daa9f
 
 ## 使用方式
 ```
